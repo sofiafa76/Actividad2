@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Actividad2</string>
+    <string-array name="spinnercont">
+        <item>EUROPA</item>
+        <item>ASIA</item>
+        <item>AMERICA</item>
+        <item>AFRICA</item>
+        <item>OCEANIA</item>
+    </string-array>
+</resources>
