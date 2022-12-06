@@ -38,7 +38,6 @@ public class Actividad2Application extends Application {
     }
 
     public List<Pais> getPais(String continentes){
-
         return datos.get(continentes);
     }
 }

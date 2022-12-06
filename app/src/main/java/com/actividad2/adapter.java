@@ -1,6 +1,5 @@
 package com.actividad2;
 
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +13,8 @@ import java.util.List;
 public class adapter extends RecyclerView.Adapter<adapter.accederDatos> {
     List<AlmacenarPaises> lista;
 
-    public adapter(List<AlmacenarPaises> lista) {
-        this.lista = lista;
+    public adapter(String[] lista) {
+        this .lista = lista;
     }
 
     @NonNull
