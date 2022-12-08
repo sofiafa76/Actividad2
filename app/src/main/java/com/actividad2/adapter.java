@@ -13,14 +13,14 @@ import java.util.List;
 public class adapter extends RecyclerView.Adapter<adapter.accederDatos> {
     List<AlmacenarPaises> lista;
 
-    public adapter(String[] lista) {
+    public adapter(List lista) {
         this .lista = lista;
     }
 
     @NonNull
     @Override
     public accederDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.paisesycapitales,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
         return new accederDatos(v);
 
     }

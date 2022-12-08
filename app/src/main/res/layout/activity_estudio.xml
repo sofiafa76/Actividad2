@@ -18,5 +18,16 @@
         android:layout_width="409dp"
         android:layout_height="677dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="53dp" />
+        tools:layout_editor_absoluteY="53dp"
+        tools:listitem="@layout/item" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="414dp"
+        android:layout_height="673dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner"
+        app:srcCompat="@drawable/mapamundi" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -15,7 +16,9 @@ import java.util.TreeMap;
 public class Actividad2Application extends Application {
 
     Map<String, List<Pais>> datos = new TreeMap<>();
-
+public Map<String,List<Pais>> retornarMapa(){
+    return datos;
+}
     @Override
     public void onCreate() {
         super.onCreate();
@@ -38,6 +41,7 @@ public class Actividad2Application extends Application {
     }
 
     public List<Pais> getPais(String continentes){
-        return datos.get(continentes);
+        return Collections.unmodifiableList(datos.get(continentes));
+
     }
 }
