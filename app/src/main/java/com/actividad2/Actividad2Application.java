@@ -13,35 +13,42 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Actividad2Application extends Application {
 
-    Map<String, List<Pais>> datos = new TreeMap<>();
-public Map<String,List<Pais>> retornarMapa(){
-    return datos;
-}
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        InputStream stream = getResources().openRawResource(R.raw.capitales);
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
-            String linea;
-            while ((linea = in.readLine()) != null) {
-                String [] items = linea.split(";");
-                Pais pais = new Pais(items[1], items[2], items[0]);
-                List<Pais> paises = datos.get(items[0]);
-                if (paises == null) {
-                    paises = new ArrayList<>();
-                    datos.put(items[0], paises);
-                }
-                paises.add(pais);
-            }
-        } catch (IOException e) {
-            datos = null;
+    public class Actividad2Application extends Application {
+
+        Map<String, List<Pais>> retornarMapa = new TreeMap<>();
+
+        public Map<String, List<Pais>> RetornarMapa() {
+            return retornarMapa;
         }
-    }
 
-    public List<Pais> getPais(String continentes){
-        return Collections.unmodifiableList(datos.get(continentes));
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            try {
+                InputStream stream = getResources().openRawResource(R.raw.capitales);
+                BufferedReader in = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
+                String linea;
+                while ((linea = in.readLine()) != null) {
+                    String[] items = linea.split(";");
+                    Pais pais = new Pais(items[1], items[2], items[0]);
+                    List<Pais> paises = retornarMapa.get(items[0]);
+                    if (paises == null) {
+                        paises = new ArrayList<>();
+                        retornarMapa.put(items[0], paises);
+                    }
+                    paises.add(pais);
+
+                }
+            } catch (IOException e) {
+                retornarMapa = null;
+            }
+        }
+
+        public List<Pais> guardarMapa(String continente) {
+            return Collections.unmodifiableList(retornarMapa.get(continente));
+        }
+
+
 
     }
-}
