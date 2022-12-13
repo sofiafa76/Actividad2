@@ -11,7 +11,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
+ import com.actividad2.Actividad2Application;
+ import com.actividad2.Pais;
+ import com.actividad2.R;
+
+ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
